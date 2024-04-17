@@ -31,7 +31,7 @@ public class Program {
 			Double amount = Double.parseDouble(sc.nextLine());
 			
 			acc.withdraw(amount);
-			
+			System.out.println("New Balance: " + String.format("%.2f",acc.getBalance()));
 		}
 		catch (WithDrawException e) {
 			System.out.println("Withdraw error: " + e.getMessage());

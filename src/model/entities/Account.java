@@ -9,6 +9,8 @@ public class Account{
 	private Double balance;
 	private Double withDrawLimit;
 	
+	public Account() {
+	}
 	
 	public Account(Integer number, String holder, Double balance, Double withDrawLimit) {
 		this.number = number;
@@ -54,14 +56,15 @@ public class Account{
 		balance += amount;
 	}
 	public void withdraw(Double amount) {
-		if (balance == 0 || amount > balance) {
+		validateWithdraw(amount);
+		balance -= amount;
+	}
+	private void validateWithdraw(Double amount) {
+		if (amount > getBalance()) {
 			throw new WithDrawException("Not enough balance");
 		}
 		if (getWithDrawLimit() < amount) {
 			throw new WithDrawException("The amount exceeds withdraw limit");
 		}
-		balance -= amount;
-		System.out.println("New Balance: " + String.format("%.2f",getBalance()));
 	}
-	
 }
