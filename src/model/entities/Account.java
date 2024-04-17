@@ -51,16 +51,17 @@ public class Account{
 		this.withDrawLimit = withDrawLimit;
 	}
 	public void deposit(Double amount) {
-		balance = amount;
+		balance += amount;
 	}
 	public void withdraw(Double amount) {
-		if (balance == 0) {
-			throw new WithDrawException("no ten dinero");
+		if (balance == 0 || amount > balance) {
+			throw new WithDrawException("Not enough balance");
 		}
 		if (getWithDrawLimit() < amount) {
-			throw new WithDrawException("no ten limit");
+			throw new WithDrawException("The amount exceeds withdraw limit");
 		}
-		balance =- amount;
+		balance -= amount;
+		System.out.println("New Balance: " + String.format("%.2f",getBalance()));
 	}
 	
 }
