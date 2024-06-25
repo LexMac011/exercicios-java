@@ -12,7 +12,7 @@ public class Dados_pessoas {
 		System.out.print("Quantas pessoas serão digitadas? ");
 		// PROBLEMA DO BUFFER RESOLVIDO
 		int n = Integer.parseInt(sc.nextLine());
-		// PARSEINT OU DOUBLE É UMA MÃO NA RODA ALEXA KARAIOOOOOO
+		
 		
 		// VETORES USADOS 
 		double[] alturaF = new double[n];
