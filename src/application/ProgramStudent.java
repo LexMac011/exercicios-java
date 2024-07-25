@@ -31,7 +31,7 @@ public class ProgramStudent {
 			setStudents.add(new Student(Integer.parseInt(sc.nextLine())));
 		}
 		System.out.println("Total students: " + setStudents.size());
-		
+		sc.close();
 	}
 	
 }
